@@ -12,7 +12,6 @@ import useGetData from "../../hooks/useGetData";
 import PagesNavigation from "../../components/PagesNavigation";
 import usePages from "../../hooks/usePages";
 import useWindowWidth from "../../hooks/useWindowWidth";
-import Footer from "../../components/Footer";
 
 export default function Search() {
   const { page, previousPage, nextPage } = usePages();
@@ -55,7 +54,7 @@ export default function Search() {
       <Header />
       <SearchField />
       {!movies.loading && !people.loading && (
-        <main className="flex flex-col items-center">
+        <div className="flex flex-col items-center">
           <h2 className="text-center pt-6 text-xl">
             Results for:{" "}
             <span className="font-bold text-primary-color italic">
@@ -138,9 +137,8 @@ export default function Search() {
             nextPage={nextPage}
             previousPage={previousPage}
           />
-        </main>
+        </div>
       )}
-      <Footer />
     </>
   );
 }

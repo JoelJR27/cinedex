@@ -4,13 +4,12 @@ import Person from "./pages/Person";
 import Movie from "./pages/Movie";
 import People from "./pages/People";
 import Search from "./pages/Search";
-import "./index.css";
 import BackToTopButton from "./components/BackToTopButton";
-// import Teste from "./Test";
+import Footer from "./components/Footer";
+import "./index.css";
 export default function App() {
   return (
-    // <Teste />
-    <div className="h-screen w-full font-montserrat bg-amber-50">
+    <main className="min-h-screen w-full font-montserrat bg-amber-50">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -21,6 +20,7 @@ export default function App() {
         </Routes>
       </BrowserRouter>
       <BackToTopButton />
-    </div>
+      <Footer />
+    </main>
   );
 }

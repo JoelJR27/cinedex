@@ -2,7 +2,6 @@ import Header from "../../components/Header";
 import SearchField from "../../components/SearchField/index";
 import Title from "../../components/Title";
 import Card from "../../components/Card";
-import Footer from "../../components/Footer";
 import useGetData from "../../hooks/useGetData";
 import Loading from "../../components/Loading";
 import Swiper from "../../components/Swiper";
@@ -22,7 +21,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="flex flex-col">
+      <div className="flex flex-col">
         {!discoverMovies.loading &&
           !topMovies.loading &&
           !upcomingMovies.loading && (
@@ -115,8 +114,7 @@ export default function Home() {
               )}
             </>
           )}
-        <Footer />
-      </main>
+      </div>
     </>
   );
 }

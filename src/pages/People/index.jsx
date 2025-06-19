@@ -9,7 +9,6 @@ import Title from "../../components/Title";
 import usePages from "../../hooks/usePages";
 import PagesNavigation from "../../components/PagesNavigation";
 import useWindowWidth from "../../hooks/useWindowWidth";
-import Footer from "../../components/Footer";
 
 export default function People() {
   const { page, previousPage, nextPage } = usePages();
@@ -21,7 +20,7 @@ export default function People() {
   return (
     <>
       <Header />
-      <main className="flex flex-col justify-center">
+      <div className="flex flex-col justify-center">
         <SearchField />
         <Title>Popular people</Title>
         {!people.loading && (
@@ -60,8 +59,7 @@ export default function People() {
           nextPage={nextPage}
           previousPage={previousPage}
         />
-      </main>
-      <Footer />
+      </div>
     </>
   );
 }

@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 import SearchField from "../../components/SearchField";
 import Loading from "../../components/Loading";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
@@ -25,7 +24,6 @@ export default function Movie() {
         <ClickableLink text="Back to Home" link="/" />
         <ErrorScreen message={`Error: ${movie.error}`} />
         <IdsNavigation page="movie" currentId={id} />
-        <Footer />
       </>
     );
   return (
@@ -35,7 +33,7 @@ export default function Movie() {
       {!movie.loading && !movie.error && movie && (
         <>
           <ClickableLink text="Back to Home" link="/" />
-          <main className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center">
             <div className="flex flex-col gap-4 p-10 lg:max-w-7/10 lg:justify-self-center lg:grid lg:grid-cols-2 lg:px-[10%] lg:gap-x-5">
               {(movie.data.backdrop_path && (
                 <img
@@ -119,11 +117,10 @@ export default function Movie() {
                 </a>
               )}
             </div>
-          </main>
+          </div>
         </>
       )}
       <IdsNavigation page="movie" currentId={id} />
-      <Footer />
     </>
   );
 }
